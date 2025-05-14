@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fastcampus.flow.dto.AllowUserResponse;
 import com.fastcampus.flow.dto.AllowedUserResponse;
+import com.fastcampus.flow.dto.RankNumberResponse;
 import com.fastcampus.flow.dto.RegisterUserResponse;
 import com.fastcampus.flow.service.UserQueueService;
 
@@ -42,5 +43,13 @@ public class UserQueueController {
         @RequestParam(name = "user_id") Long userId
     ) {
         return userQueueService.isAllowed(queue, userId).map(AllowedUserResponse::new);
+    }
+
+    @GetMapping("/rank")
+    public Mono<RankNumberResponse> getRankUser(
+        @RequestParam(name = "queue", defaultValue = "default") String queue,
+        @RequestParam(name = "user_id") Long userId
+    ) {
+        return userQueueService.getRank(queue, userId).map(RankNumberResponse::new);
     }
 }
