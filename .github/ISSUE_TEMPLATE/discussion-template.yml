@@ -1,0 +1,48 @@
+name: 💬 토론 및 아이디어 기록 (Discussion / Idea Log)
+description: 아이디어를 기록하거나 특정 주제에 대해 스스로 고민하고 결정하는 과정을 남깁니다.
+title: "chore: [토론/아이디어 주제 요약]"
+labels: discussion, idea
+assignees: []
+
+body:
+  - type: textarea
+    id: topic
+    attributes:
+      label: 📌 주제 / 문제 상황
+      description: 어떤 아이디어나 문제에 대해 고민하고 있는지 설명해주세요.
+      placeholder: "예: 사용자 알림 시스템 구현 방식 고민"
+    validations:
+      required: true
+  - type: textarea
+    id: thoughts
+    attributes:
+      label: 💭 나의 생각 / 현재 접근 방식
+      description: 현재까지의 생각, 고려 중인 해결책, 장단점 등을 자유롭게 작성해주세요.
+      placeholder: |
+        1. WebSocket 사용 방안
+           - 장점: 실시간 양방향 통신 가능
+           - 단점: 서버 부하, 구현 복잡도
+        2. SSE (Server-Sent Events) 사용 방안
+           - 장점: 단방향, 구현 상대적 용이
+           - 단점: ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: questions-to-self
+    attributes:
+      label: 🤔 스스로에게 던지는 질문 / 더 조사할 내용
+      description: 결정을 내리거나 아이디어를 구체화하기 위해 더 고민하거나 조사해야 할 내용을 적어보세요.
+      placeholder: |
+        - 현재 프로젝트 규모에 WebSocket이 적합할까?
+        - SSE 사용 시 단점은 무엇이며, 극복 가능한가?
+        - 관련 라이브러리나 참고할 만한 오픈소스 프로젝트는?
+    validations:
+      required: false
+  - type: textarea
+    id: decision-log
+    attributes:
+      label: 💡 결정 사항 (선택 - 추후 업데이트)
+      description: 고민 끝에 내린 결정이나 최종 아이디어를 기록합니다.
+    validations:
+      required: false

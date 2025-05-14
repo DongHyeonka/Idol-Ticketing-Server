@@ -1,0 +1,67 @@
+name: 🐛 버그 리포트 (Bug Report)
+description: 발생한 버그를 상세히 기록하여 빠르게 해결할 수 있도록 합니다.
+title: "fix: [버그 요약]"
+labels: bug
+assignees: []
+
+body:
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 🐞 버그 설명
+      description: 어떤 버그인지 명확하게 설명해주세요.
+      placeholder: "예: 특정 조건에서 로그인 버튼 클릭 시 페이지가 응답하지 않습니다."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: 버그 재현 방법
+      description: 버그를 재현할 수 있는 단계를 순서대로 작성해주세요. (최대한 상세하게)
+      placeholder: |
+        1. '/login' 페이지로 이동합니다.
+        2. 아이디 입력 필드에 'testuser'를 입력합니다.
+        3. 비밀번호는 비워둡니다.
+        4. 로그인 버튼을 클릭합니다.
+        5. (예상 결과: '비밀번호를 입력해주세요' 알림 / 실제 결과: 페이지 무응답)
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: ✅ 예상 동작
+      description: 원래 어떤 결과가 나와야 한다고 생각하는지 설명해주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: 💥 실제 동작 (및 오류 메시지)
+      description: 실제로 어떤 결과가 발생했는지, 오류 메시지가 있다면 함께 작성해주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 💻 사용 환경 (선택)
+      description: 버그가 발생한 환경을 알려주세요. (브라우저 종류 및 버전, OS 등)
+      placeholder: |
+        - OS: Windows 11
+        - Browser: Chrome 1XX.X.XXXX.XX
+        - Node.js version: vXX.X.X (백엔드 버그의 경우)
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 📸 스크린샷 (선택)
+      description: 가능하다면 버그 상황을 보여주는 스크린샷을 첨부해주세요. (이미지 직접 업로드 또는 링크)
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 💡 추가 정보 (선택)
+      description: 문제 해결에 도움이 될 만한 추가적인 정보가 있다면 작성해주세요.
+    validations:
+      required: false
