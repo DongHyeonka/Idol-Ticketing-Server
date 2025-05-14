@@ -1,0 +1,45 @@
+name: ✨ 기능 요청 (Feature Request)
+description: 새로운 기능을 제안하고 개발 계획을 세웁니다.
+title: "feat: [기능 요약]"
+labels: enhancement
+assignees: []
+
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 기능 설명
+      description: 어떤 기능을 만들고 싶은지, 왜 필요한지 설명해주세요. (사용자 스토리 형식도 좋습니다)
+      placeholder: "예: 사용자로서 프로필 이미지를 변경할 수 있으면 좋겠습니다."
+    validations:
+      required: true
+  - type: textarea
+    id: tasks
+    attributes:
+      label: ✅ 주요 작업 목록 (To-Do)
+      description: 이 기능을 구현하기 위해 필요한 작업들을 최대한 상세하게 작성해주세요. (완료 시 체크)
+      placeholder: |
+        - [ ] 프로필 이미지 업로드 API 설계 및 구현
+        - [ ] 프로필 페이지에 이미지 업로드 UI 추가
+        - [ ] 이미지 저장 로직 구현 (예: S3 연동)
+        - [ ] ...
+    validations:
+      required: true
+  - type: textarea
+    id: considerations
+    attributes:
+      label: 🤔 고려 사항 (선택)
+      description: 기술적인 어려움, 다른 기능과의 연관성, 참고 자료 등 개발 시 고려해야 할 사항을 적어주세요.
+      placeholder: |
+        - 이미지 최적화 방안 고려
+        - 관련 API 문서 링크: [링크]
+    validations:
+      required: false
+  - type: input
+    id: due-date
+    attributes:
+      label: 📅 목표 완료일 (선택)
+      description: 개인적인 목표 완료일을 설정합니다.
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: false

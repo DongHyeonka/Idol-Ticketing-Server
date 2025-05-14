@@ -1,0 +1,56 @@
+name: 🛠️ 일반 작업 (Task / Chore / Refactor / Docs)
+description: 코드 리팩토링, 문서 작업, 설정 변경 등 일반적인 작업을 기록합니다.
+title: "[타입]: [작업 내용 요약]"
+labels: task
+assignees: []
+
+body:
+  - type: dropdown
+    id: task-type
+    attributes:
+      label: 🏷️ 작업 유형
+      description: |
+        작업의 성격을 선택해주세요. (title에도 반영해주세요)
+        - refactor: 코드 리팩토링
+        - docs: 문서 작업
+        - chore: 빌드/설정 유지보수
+        - style: 코드 스타일 정리
+        - test: 테스트 코드 작성/수정
+      options:
+        - refactor
+        - docs
+        - chore
+        - style
+        - test
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 작업 설명
+      description: 어떤 작업을 왜 하는지 설명해주세요.
+      placeholder: "예: UserController 로직 가독성 향상을 위한 리팩토링"
+    validations:
+      required: true
+  - type: textarea
+    id: tasks
+    attributes:
+      label: ✅ 세부 작업 목록 (To-Do)
+      description: 이 작업을 완료하기 위해 필요한 세부 단계들을 작성해주세요.
+      placeholder: |
+        - [ ] 중복 코드 제거
+        - [ ] 메서드 분리
+        - [ ] README 파일 업데이트
+        - [ ] ...
+    validations:
+      required: false
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: ✨ 기대 효과 / 완료 기준
+      description: 이 작업이 완료되었을 때 기대되는 결과나 완료 기준을 설명해주세요.
+      placeholder: "예: 코드 복잡도 감소, 문서 최신화 완료"
+    validations:
+      required: false
+  
