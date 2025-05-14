@@ -85,7 +85,7 @@ public class UserQueueService {
         }
     }
 
-    @Scheduled(initialDelay = 5000, fixedDelay = 10000)
+    @Scheduled(initialDelay = 5000, fixedDelay = 10000) // 주기적으로 계산하지 않고 서버에서 직접 응답하도록 추후 수정
     public void scheduleAllowUser() {
         if (!scheduling) {
             log.info("passed scheduling...");
@@ -93,7 +93,7 @@ public class UserQueueService {
         }
         log.info("called scheduling...");
 
-        var maxAllowUserCount = 3L;
+        var maxAllowUserCount = 100L;
         reactiveRedisTemplate.scan(ScanOptions.scanOptions()
                 .match(USER_QUEUE_WAIT_KEY_FOR_SCAN)
                 .count(100)
